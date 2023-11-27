@@ -1,0 +1,77 @@
+@font-face {
+      /* Add your custom font*/
+  font-family: 'Neon Future';
+  src: url('fonts/Neon Future.woff') format('woff'),
+
+}
+
+body {
+
+/* set margin to 0 and overflow to hidden, to go fullscreen */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 40px;
+  color: whitesmoke;
+  background-color:  #08080b;
+  font-family: 'Neon Future';
+       
+}
+
+
+.word {
+      display: inline-block;
+      margin-right: 10px; /* Adjust as needed */
+      opacity: 0;
+      transform: translateX(40px);
+      animation: fadeInLeft 3s forwards, neonGlow 1s infinite alternate;
+      position: relative;
+    }
+
+
+
+
+    @keyframes fadeInLeft{
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+
+    @keyframes delay {
+      to {
+        visibility: hidden;
+      }
+    }
+
+ /* Initial neon glow values */
+    :root {
+      --neon-glow-color: #DDDEF9;
+      --neon-glow-size: 10px;
+    }
+
+    @keyframes neonGlow {
+      0% {
+        text-shadow: 0 0 var(--neon-glow-size) var(--neon-glow-color),
+                     0 0 calc(var(--neon-glow-size) * 2) var(--neon-glow-color),
+                     0 0 calc(var(--neon-glow-size) * 3) var(--neon-glow-color);
+      }
+      100% {
+        text-shadow: 0 0 calc(var(--neon-glow-size) / 2) var(--neon-glow-color),
+                     0 0 var(--neon-glow-size) var(--neon-glow-color),
+                     0 0 calc(var(--neon-glow-size) * 1.5) var(--neon-glow-color);
+      }
+    }
+
+    /* Additional styling for controls */
+    #colorPicker, #glowSize {
+      margin-top: 10px;
+    }
+
+

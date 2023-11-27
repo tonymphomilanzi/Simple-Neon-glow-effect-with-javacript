@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neon Glow Effect</title>
+ <!-- Link to your stylesheet -->
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+
+<!--Our target animated text-->
+<div class="animated-text">
+  <span class="word">Simply</span>
+  <span class="word">Amazing</span>
+</div>
+
+<br/>
+
+<!--Our color picker-->
+<div >
+<!-- Color Picker for Neon Glow -->
+<label for="colorPicker" style="font-family: monospace;font-size: 17px;">Neon Glow Color:</label>
+<input type="color" id="colorPicker" value="#DDDEF9" >
+
+<!-- Range Selector for Neon Glow Size -->
+<label for="glowSize" style="font-family: monospace;font-size: 17px;">Neon Glow Size:</label>
+<input type="range" id="glowSize" min="1" max="50" value="20">
+</div>
+
+<!--You can choose to add this script file seperatedly-->
+<script>
+  // Get elements
+  const colorPicker = document.getElementById('colorPicker');
+  const glowSizeInput = document.getElementById('glowSize');
+
+  // Update CSS variables on user input
+  colorPicker.addEventListener('input', (event) => {
+    document.documentElement.style.setProperty('--neon-glow-color', event.target.value);
+  });
+
+  glowSizeInput.addEventListener('input', (event) => {
+    document.documentElement.style.setProperty('--neon-glow-size', `${event.target.value}px`);
+  });
+</script>
+
+    </body>
+</html>
+	
